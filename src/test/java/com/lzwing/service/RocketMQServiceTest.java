@@ -1,5 +1,6 @@
 package com.lzwing.service;
 
+import com.lzwing.mq.rocketmq.RocketMQService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;

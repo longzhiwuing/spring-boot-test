@@ -1,6 +1,7 @@
 package com.lzwing.service;
 
 import com.lzwing.mq.kafka.KafkaMessageConsumer;
+import com.lzwing.mq.kafka.KafkaMessageSendService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +33,7 @@ public class KafkaMessageSendServiceTest {
         try {
             kafkaMessageSendService.send(message);
         } catch (Exception e) {
-            log.error(e.getMessage());
+            e.printStackTrace();
         }
     }
 }

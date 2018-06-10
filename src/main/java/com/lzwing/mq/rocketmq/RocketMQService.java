@@ -1,7 +1,5 @@
-package com.lzwing.service;
+package com.lzwing.mq.rocketmq;
 
-import com.lzwing.mq.rocketmq.DemoConsumer;
-import com.lzwing.mq.rocketmq.DemoProducer;
 import com.maihaoche.starter.mq.base.MessageBuilder;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.beans.factory.annotation.Autowired;

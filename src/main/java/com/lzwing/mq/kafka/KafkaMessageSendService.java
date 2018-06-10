@@ -1,4 +1,4 @@
-package com.lzwing.service;
+package com.lzwing.mq.kafka;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +22,6 @@ public class KafkaMessageSendService {
         log.info("topic="+topic+",message="+message);
         ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, message);
         future.addCallback(success -> log.info("KafkaMessageProducer 发送消息成功！"),
-                fail -> log.error("KafkaMessageProducer 发送消息失败！"));
+                fail -> fail.printStackTrace());
     }
 }
