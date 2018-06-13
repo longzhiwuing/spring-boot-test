@@ -5,9 +5,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.handler.annotation.Headers;
 import org.springframework.messaging.handler.annotation.Payload;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @Slf4j
 public class KafkaMessageConsumer {
 
