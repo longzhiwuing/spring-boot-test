@@ -207,6 +207,13 @@
             <version>2.1.5</version>
         </dependency>
 
+		<dependency>
+			<groupId>com.lzwing</groupId>
+			<artifactId>strwrapper-spring-boot-starter</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>test</scope>
+		</dependency>
+
 
 	</dependencies>
 
