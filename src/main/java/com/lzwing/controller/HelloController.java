@@ -1,6 +1,8 @@
 package com.lzwing.controller;
 
+import com.lzwing.applicationevent.DemoPublisher;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.ServletRequestBindingException;
@@ -19,9 +21,15 @@ import java.util.Map;
 @Slf4j
 public class HelloController {
 
+    @Autowired
+    DemoPublisher demoPublisher;
+
     @GetMapping("/test")
     @ResponseBody
     public String test() {
+
+        demoPublisher.publish("访问test5......");
+
         return "test5";
     }
 
