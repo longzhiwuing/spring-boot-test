@@ -1,6 +1,8 @@
 package com.lzwing.controller;
 
 import com.lzwing.applicationevent.DemoPublisher;
+import com.lzwing.threadpool.AsyncHandler;
+import com.lzwing.threadpool.LongTimeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,13 +26,32 @@ public class HelloController {
     @Autowired
     DemoPublisher demoPublisher;
 
+    @Autowired
+    AsyncHandler asyncHandler;
+
+    @Autowired
+    LongTimeService longTimeService;
+
     @GetMapping("/test")
     @ResponseBody
     public String test() {
 
-        demoPublisher.publish("访问test5......");
+        demoPublisher.publish("测试demoPublisher....");
 
         return "test5";
+    }
+
+    @GetMapping("/async")
+    @ResponseBody
+    public String async() {
+
+        try {
+            longTimeService.doLongTimeService();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "async";
     }
 
     @GetMapping("/bbb")
@@ -42,7 +63,7 @@ public class HelloController {
         } catch (ServletRequestBindingException e) {
             new RuntimeException(e);
         }
-        return "hello";
+        return "asyncHandler";
     }
 
     @RequestMapping(value = "/hello/{name}/{age}/{gender}", method = RequestMethod.GET)
@@ -50,7 +71,7 @@ public class HelloController {
         Map<String, String> pathVariables = resolvePathVariables(request);
         log.info("pathVariables:"+pathVariables);
         model.addAttribute("name", "spbt");
-        return "hello";
+        return "asyncHandler";
     }
 
     private Map<String, String> resolvePathVariables(HttpServletRequest request) {
