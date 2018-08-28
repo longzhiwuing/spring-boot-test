@@ -54,6 +54,11 @@ public class HelloController {
         return "async";
     }
 
+    @GetMapping("/i18n")
+    public String i18n() {
+        return "i18n";
+    }
+
     @GetMapping("/bbb")
     public String demo(HttpServletRequest request) {
         ServletWebRequest servletWebRequest = new ServletWebRequest(request);

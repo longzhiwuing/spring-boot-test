@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!--/*@thymesVar id="name" type="java.lang.String"*/-->
+<div>
+    <h4 th:text="#{index.welcome}"></h4>
+    <p><label th:text="#{login.username}"></label>：<input type="text" name="username" /></p>
+    <p><label th:text="#{login.password}"></label>: <input type="text" name="password" /></p>
+    <p><input type="submit" value="login" th:attr="value=#{login.login}"/></p>
+</div>
+</body>
+</html>
