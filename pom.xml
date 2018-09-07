@@ -26,6 +26,7 @@
         <kafka.version>0.9.0.0</kafka.version>
 		<mapstruct.version>1.2.0.Final</mapstruct.version>
 		<flyway.version>5.1.4</flyway.version>
+		<jasypt.version>2.0.0</jasypt.version>
 	</properties>
 
 	<dependencies>
@@ -239,6 +240,13 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 			<version>${flyway.version}</version>
+		</dependency>
+
+		<!-- 数据库加密 -->
+		<dependency>
+			<groupId>com.github.ulisesbocchio</groupId>
+			<artifactId>jasypt-spring-boot-starter</artifactId>
+			<version>${jasypt.version}</version>
 		</dependency>
 
 		<dependency>
